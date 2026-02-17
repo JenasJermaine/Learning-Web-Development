@@ -1,0 +1,7 @@
+# Node.js
+node_modules/
+/build
+.env
+npm-debug.log
+.nyc_output/
+coverage/
