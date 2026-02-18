@@ -1,6 +1,6 @@
-import express from "express";
-/* import productRoutes from './routes/productRoutes.js'
-import pool from './config/db.js'; */
+import express from 'express';
+import productRoutes from './routes/productRoutes.js'
+import pool from './config/db.js';
 
 const app = express();
 const PORT = 8090;
@@ -9,19 +9,16 @@ const PORT = 8090;
 app.use(express.json());
 
 //ROUTES
-/* app.use('/products', productRoutes); */
+app.use('/products', productRoutes);
 
 // app.use('/', productRoutes);
 
-app.use("/", (req, res) => {
-  res.send("Hello world");
-});
+// app.use('/', (req, res) => {
+//     res.send("Hello world")
+// });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`)
-});
 
-/* app.listen(PORT, async()=>{
+app.listen(PORT, async()=>{
     try {
         const connection = await pool.getConnection();
         connection.release(); ///release the connection back immediately
@@ -34,4 +31,4 @@ app.listen(PORT, () => {
         console.error(`❌ Failed to connect to database: ${error.message}`)
         console.log(`‼️ Server is running without database connection`)
     }
-}) */
+})
